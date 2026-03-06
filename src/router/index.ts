@@ -2,6 +2,13 @@ import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
 import { pages } from '@/data/pages'
 
+declare module 'vue-router' {
+  interface RouteMeta {
+    title?: string
+    description?: string
+  }
+}
+
 const HomePage = () => import('@/views/HomePage.vue')
 const NotFound = () => import('@/views/NotFound.vue')
 
@@ -54,11 +61,11 @@ const router = createRouter({
 })
 
 router.afterEach((to) => {
-  document.title = (to.meta.title as string) || DEFAULT_TITLE
+  document.title = to.meta.title || DEFAULT_TITLE
 
   const descriptionEl = document.querySelector('meta[name="description"]')
   if (descriptionEl) {
-    descriptionEl.setAttribute('content', (to.meta.description as string) || DEFAULT_DESCRIPTION)
+    descriptionEl.setAttribute('content', to.meta.description || DEFAULT_DESCRIPTION)
   }
 })
 
