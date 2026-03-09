@@ -151,6 +151,11 @@ Before implementing any new feature or sub-page, agents MUST:
    - `vue-konva` — 2D canvas library for drawing, games, and interactive graphics
    - `shiki` — Syntax highlighter
 8. **Author attribution required** — every page must have an `author` field in its `meta.ts` file
+9. **No landing pages or promotional content** — Pages must provide direct, self-contained value to users (e.g., a game, tool, interactive experience, or educational content). The following are **not accepted**:
+   - Landing pages or showcase pages for external products, services, or brands
+   - Pages whose primary purpose is to redirect users to external websites or services
+   - Advertising, marketing, or affiliate content
+   - Portfolio/brochure pages that only display static information about an external entity
 
 ## Recommended Internal Structure
 
